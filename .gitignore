@@ -1,0 +1,20 @@
+# Compiled output
+out/
+*.class
+
+# Generated invoices
+invoices/
+*.pdf
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+eclipse-bin/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Maven (if imported later)
+target/
