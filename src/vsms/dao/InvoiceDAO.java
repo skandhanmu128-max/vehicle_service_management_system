@@ -14,7 +14,7 @@ import vsms.model.Invoice;
 public class InvoiceDAO {
 
     public int insert(Invoice invoice) throws SQLException {
-        String sql = "INSERT INTO invoice (booking_id, invoice_number, total, pdf_path)"
+        String sql = "INSERT INTO `invoice` (`booking_id`, `invoice_number`, `total`, `pdf_path`)"
                 + " VALUES (?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -33,7 +33,7 @@ public class InvoiceDAO {
     }
 
     public Invoice findByBookingId(int bookingId) throws SQLException {
-        String sql = "SELECT * FROM invoice WHERE booking_id = ?";
+        String sql = "SELECT * FROM `invoice` WHERE `booking_id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, bookingId);
@@ -47,7 +47,7 @@ public class InvoiceDAO {
     }
 
     public Invoice findByNumber(String invoiceNumber) throws SQLException {
-        String sql = "SELECT * FROM invoice WHERE invoice_number = ?";
+        String sql = "SELECT * FROM `invoice` WHERE `invoice_number` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, invoiceNumber);
@@ -61,7 +61,7 @@ public class InvoiceDAO {
     }
 
     public List<Invoice> findAll() throws SQLException {
-        String sql = "SELECT * FROM invoice ORDER BY id DESC";
+        String sql = "SELECT * FROM `invoice` ORDER BY `id` DESC";
         List<Invoice> list = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              Statement st = conn.createStatement();
@@ -74,7 +74,7 @@ public class InvoiceDAO {
     }
 
     public String nextInvoiceNumber() throws SQLException {
-        String sql = "SELECT COUNT(*) FROM invoice";
+        String sql = "SELECT COUNT(*) FROM `invoice`";
         try (Connection conn = DBConnection.getConnection();
              Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(sql)) {

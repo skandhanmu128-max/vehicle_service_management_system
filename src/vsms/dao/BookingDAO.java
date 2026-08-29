@@ -20,9 +20,9 @@ public class BookingDAO {
      * The returned booking has its generated id populated.
      */
     public int insertWithItems(Booking booking) throws SQLException {
-        String bookingSql = "INSERT INTO booking (vehicle_id, scheduled_date, status, odometer, technician, notes)"
+        String bookingSql = "INSERT INTO `booking` (`vehicle_id`, `scheduled_date`, `status`, `odometer`, `technician`, `notes`)"
                 + " VALUES (?, ?, ?, ?, ?, ?)";
-        String itemSql = "INSERT INTO booking_item (booking_id, service_type_id, cost) VALUES (?, ?, ?)";
+        String itemSql = "INSERT INTO `booking_item` (`booking_id`, `service_type_id`, `cost`) VALUES (?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection()) {
             conn.setAutoCommit(false);
@@ -72,7 +72,7 @@ public class BookingDAO {
 
     public Booking findById(int id) throws SQLException {
         Booking booking = null;
-        String sql = "SELECT * FROM booking WHERE id = ?";
+        String sql = "SELECT * FROM `booking` WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -89,17 +89,17 @@ public class BookingDAO {
     }
 
     public List<Booking> findByStatus(String status) throws SQLException {
-        String sql = "SELECT * FROM booking WHERE status = ? ORDER BY scheduled_date DESC, id DESC";
+        String sql = "SELECT * FROM `booking` WHERE `status` = ? ORDER BY `scheduled_date` DESC, `id` DESC";
         return queryList(sql, status);
     }
 
     public List<Booking> findByVehicleId(int vehicleId) throws SQLException {
-        String sql = "SELECT * FROM booking WHERE vehicle_id = ? ORDER BY scheduled_date DESC, id DESC";
+        String sql = "SELECT * FROM `booking` WHERE `vehicle_id` = ? ORDER BY `scheduled_date` DESC, `id` DESC";
         return queryList(sql, Integer.toString(vehicleId));
     }
 
     public List<Booking> findAll() throws SQLException {
-        String sql = "SELECT * FROM booking ORDER BY scheduled_date DESC, id DESC";
+        String sql = "SELECT * FROM `booking` ORDER BY `scheduled_date` DESC, `id` DESC";
         List<Booking> list = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              Statement st = conn.createStatement();
@@ -115,7 +115,7 @@ public class BookingDAO {
     }
 
     public boolean updateStatus(int id, String status) throws SQLException {
-        String sql = "UPDATE booking SET status = ? WHERE id = ?";
+        String sql = "UPDATE `booking` SET `status` = ? WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, status);
@@ -125,7 +125,7 @@ public class BookingDAO {
     }
 
     public boolean completeBooking(int id, int odometer, String technician) throws SQLException {
-        String sql = "UPDATE booking SET status = 'COMPLETED', odometer = ?, technician = ? WHERE id = ?";
+        String sql = "UPDATE `booking` SET `status` = 'COMPLETED', `odometer` = ?, `technician` = ? WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, odometer);
@@ -136,7 +136,7 @@ public class BookingDAO {
     }
 
     public boolean hasInvoice(int bookingId) throws SQLException {
-        String sql = "SELECT COUNT(*) FROM invoice WHERE booking_id = ?";
+        String sql = "SELECT COUNT(*) FROM `invoice` WHERE `booking_id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, bookingId);
@@ -148,10 +148,10 @@ public class BookingDAO {
     }
 
     private void loadItems(Booking booking) throws SQLException {
-        String sql = "SELECT bi.id, bi.booking_id, bi.service_type_id, bi.cost, st.name"
-                + " FROM booking_item bi"
-                + " JOIN service_type st ON st.id = bi.service_type_id"
-                + " WHERE bi.booking_id = ? ORDER BY bi.id";
+        String sql = "SELECT bi.`id`, bi.`booking_id`, bi.`service_type_id`, bi.`cost`, st.`name`"
+                + " FROM `booking_item` bi"
+                + " JOIN `service_type` st ON st.`id` = bi.`service_type_id`"
+                + " WHERE bi.`booking_id` = ? ORDER BY bi.`id`";
         List<BookingItem> items = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

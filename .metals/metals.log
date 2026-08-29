@@ -102,3 +102,7 @@ C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsm
                                                   ^
 2026.08.29 20:04:34 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/web/WebServer.java. Output:
 
+2026.08.29 20:05:28 WARN  no build target for: C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\Main.java
+2026.08.29 20:05:28 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:05:28 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/Main.java. Output:
+

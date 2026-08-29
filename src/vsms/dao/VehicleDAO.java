@@ -14,7 +14,7 @@ import vsms.model.Vehicle;
 public class VehicleDAO {
 
     public int insert(Vehicle v) throws SQLException {
-        String sql = "INSERT INTO vehicle (customer_id, make, model, year, license_plate, vin)"
+        String sql = "INSERT INTO `vehicle` (`customer_id`, `make`, `model`, `year`, `license_plate`, `vin`)"
                 + " VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -35,7 +35,7 @@ public class VehicleDAO {
     }
 
     public Vehicle findById(int id) throws SQLException {
-        String sql = "SELECT * FROM vehicle WHERE id = ?";
+        String sql = "SELECT * FROM `vehicle` WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -49,7 +49,7 @@ public class VehicleDAO {
     }
 
     public List<Vehicle> findByCustomerId(int customerId) throws SQLException {
-        String sql = "SELECT * FROM vehicle WHERE customer_id = ? ORDER BY id";
+        String sql = "SELECT * FROM `vehicle` WHERE `customer_id` = ? ORDER BY `id`";
         List<Vehicle> list = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -64,7 +64,7 @@ public class VehicleDAO {
     }
 
     public List<Vehicle> findAll() throws SQLException {
-        String sql = "SELECT * FROM vehicle ORDER BY id";
+        String sql = "SELECT * FROM `vehicle` ORDER BY `id`";
         List<Vehicle> list = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              Statement st = conn.createStatement();
@@ -77,8 +77,8 @@ public class VehicleDAO {
     }
 
     public boolean update(Vehicle v) throws SQLException {
-        String sql = "UPDATE vehicle SET make = ?, model = ?, year = ?, license_plate = ?, vin = ?"
-                + " WHERE id = ?";
+        String sql = "UPDATE `vehicle` SET `make` = ?, `model` = ?, `year` = ?, `license_plate` = ?, `vin` = ?"
+                + " WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, v.getMake());
@@ -92,7 +92,7 @@ public class VehicleDAO {
     }
 
     public boolean delete(int id) throws SQLException {
-        String sql = "DELETE FROM vehicle WHERE id = ?";
+        String sql = "DELETE FROM `vehicle` WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);

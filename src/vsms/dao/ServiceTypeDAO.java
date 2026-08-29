@@ -14,7 +14,7 @@ import vsms.model.ServiceType;
 public class ServiceTypeDAO {
 
     public List<ServiceType> findAll() throws SQLException {
-        String sql = "SELECT * FROM service_type ORDER BY id";
+        String sql = "SELECT * FROM `service_type` ORDER BY `id`";
         List<ServiceType> list = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              Statement st = conn.createStatement();
@@ -27,7 +27,7 @@ public class ServiceTypeDAO {
     }
 
     public ServiceType findById(int id) throws SQLException {
-        String sql = "SELECT * FROM service_type WHERE id = ?";
+        String sql = "SELECT * FROM `service_type` WHERE `id` = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
