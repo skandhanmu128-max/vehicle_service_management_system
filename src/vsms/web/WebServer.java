@@ -130,6 +130,10 @@ public class WebServer {
     private class SetupHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+            if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             if (!"POST".equalsIgnoreCase(exchange.getRequestMethod())) {
                 sendResponse(exchange, 405, "application/json", "{\"error\":\"Method not allowed\"}".getBytes(StandardCharsets.UTF_8));
                 return;
@@ -140,6 +144,7 @@ public class WebServer {
         }
     }
 
+
     // ------------------------------------------------------------------------
     // Customers Handler
     // ------------------------------------------------------------------------
@@ -147,7 +152,12 @@ public class WebServer {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
             String method = exchange.getRequestMethod();
+            if ("OPTIONS".equalsIgnoreCase(method)) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             try {
+
                 if ("GET".equalsIgnoreCase(method)) {
                     String query = exchange.getRequestURI().getQuery();
                     if (query != null && query.startsWith("phone=")) {
@@ -221,7 +231,12 @@ public class WebServer {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
             String method = exchange.getRequestMethod();
+            if ("OPTIONS".equalsIgnoreCase(method)) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             try {
+
                 if ("GET".equalsIgnoreCase(method)) {
                     String query = exchange.getRequestURI().getQuery();
                     if (query != null && query.startsWith("customerId=")) {
@@ -278,6 +293,10 @@ public class WebServer {
     private class ServiceTypesHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+            if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             try {
                 List<ServiceType> list = serviceTypeDAO.findAll();
                 StringBuilder sb = new StringBuilder("[");
@@ -302,7 +321,12 @@ public class WebServer {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
             String method = exchange.getRequestMethod();
+            if ("OPTIONS".equalsIgnoreCase(method)) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             try {
+
                 if ("GET".equalsIgnoreCase(method)) {
                     List<Booking> list = bookingService.findAll();
                     sendResponse(exchange, 200, "application/json", bookingsToJson(list).getBytes(StandardCharsets.UTF_8));
@@ -354,6 +378,10 @@ public class WebServer {
     private class HistoryHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+            if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             try {
                 String query = exchange.getRequestURI().getQuery();
                 List<ServiceHistoryEntry> list;
@@ -380,7 +408,12 @@ public class WebServer {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
             String method = exchange.getRequestMethod();
+            if ("OPTIONS".equalsIgnoreCase(method)) {
+                sendResponse(exchange, 204, "text/plain", new byte[0]);
+                return;
+            }
             try {
+
                 if ("POST".equalsIgnoreCase(method)) {
                     String body = readBody(exchange);
                     Map<String, String> map = parseJson(body);
