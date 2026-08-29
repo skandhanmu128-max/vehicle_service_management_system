@@ -16,7 +16,8 @@ if not exist out mkdir out
   src\vsms\model\*.java ^
   src\vsms\service\*.java ^
   src\vsms\pdf\*.java ^
-  src\vsms\ui\*.java
+  src\vsms\ui\*.java ^
+  src\vsms\web\*.java
 if %errorlevel%==0 (
   echo.
   echo Build OK. Run with run.bat

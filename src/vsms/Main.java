@@ -1,13 +1,11 @@
 package vsms;
 
 import vsms.ui.Menu;
+import vsms.web.WebServer;
 
 /**
  * Entry point for the Vehicle Service Management System.
- *
- * Run from the project root:
- *   javac -encoding UTF-8 -cp "lib/*" -d out $(Get-ChildItem src -Recurse -Filter *.java)
- *   java -cp "out;lib/*;." vsms.Main
+ * Starts Web Server on http://localhost:8080 and launches interactive console menu.
  */
 public final class Main {
 
@@ -19,10 +17,18 @@ public final class Main {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.err.println("MySQL JDBC driver not found on the classpath.");
-            System.err.println("Place mysql-connector-j-*.jar in the lib/ folder and run with:");
-            System.err.println("  java -cp \"out;lib/*;.\" vsms.Main");
-            System.exit(1);
+            System.err.println("Place mysql-connector-j-*.jar in the lib/ folder.");
         }
+
+        // Launch Embedded Web Server on http://localhost:8080
+        try {
+            WebServer webServer = new WebServer(8080);
+            webServer.start();
+        } catch (Exception e) {
+            System.err.println("[Web] Failed to launch web server on port 8080: " + e.getMessage());
+        }
+
+        // Launch Console Menu
         new Menu().run();
     }
 }
