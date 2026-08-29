@@ -43,3 +43,62 @@ WARNING: Unmatched cancel notification for request id 41
 2026.08.29 19:55:21 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
 2026.08.29 19:55:21 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
 2026.08.29 19:55:21 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 19:57:12 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\Main.java. Using fallback presentation compiler.
+2026.08.29 20:01:56 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:05 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:05 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:05 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:602: error: unmappable character (0x8F) for encoding windows-1252
+                + "      <button onclick=\"showTab('db')\">âš™ï¸? Database</button>\n"
+                                                                ^
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:839: error: unmappable character (0x9D) for encoding windows-1252
+                + "      else { log.innerText = 'â?Œ Setup failed. Check MySQL running state.'; }\n"
+                                                  ^
+2026.08.29 20:04:07 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/web/WebServer.java. Output:
+
+2026.08.29 20:04:12 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:12 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:13 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:607: error: unmappable character (0x8F) for encoding windows-1252
+                + "      <button onclick=\"showTab('db')\">âš™ï¸? Database</button>\n"
+                                                                ^
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:844: error: unmappable character (0x9D) for encoding windows-1252
+                + "      else { log.innerText = 'â?Œ Setup failed. Check MySQL running state.'; }\n"
+                                                  ^
+2026.08.29 20:04:14 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/web/WebServer.java. Output:
+
+2026.08.29 20:04:19 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:19 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:19 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:612: error: unmappable character (0x8F) for encoding windows-1252
+                + "      <button onclick=\"showTab('db')\">âš™ï¸? Database</button>\n"
+                                                                ^
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:849: error: unmappable character (0x9D) for encoding windows-1252
+                + "      else { log.innerText = 'â?Œ Setup failed. Check MySQL running state.'; }\n"
+                                                  ^
+2026.08.29 20:04:19 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/web/WebServer.java. Output:
+
+2026.08.29 20:04:24 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:24 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:29 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:29 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:29 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:621: error: unmappable character (0x8F) for encoding windows-1252
+                + "      <button onclick=\"showTab('db')\">âš™ï¸? Database</button>\n"
+                                                                ^
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:858: error: unmappable character (0x9D) for encoding windows-1252
+                + "      else { log.innerText = 'â?Œ Setup failed. Check MySQL running state.'; }\n"
+                                                  ^
+2026.08.29 20:04:29 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/web/WebServer.java. Output:
+
+2026.08.29 20:04:33 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:33 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+2026.08.29 20:04:33 INFO  no build target found for C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java. Using fallback presentation compiler.
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:630: error: unmappable character (0x8F) for encoding windows-1252
+                + "      <button onclick=\"showTab('db')\">âš™ï¸? Database</button>\n"
+                                                                ^
+C:\Users\Skandhan M U\OneDrive\Desktop\Vehicle Service Management System\src\vsms\web\WebServer.java:867: error: unmappable character (0x9D) for encoding windows-1252
+                + "      else { log.innerText = 'â?Œ Setup failed. Check MySQL running state.'; }\n"
+                                                  ^
+2026.08.29 20:04:34 WARN  Running javac-semanticdb failed for file:///C:/Users/Skandhan%20M%20U/OneDrive/Desktop/Vehicle%20Service%20Management%20System/src/vsms/web/WebServer.java. Output:
+

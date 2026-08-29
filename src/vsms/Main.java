@@ -28,7 +28,15 @@ public final class Main {
             System.err.println("[Web] Failed to launch web server on port 8080: " + e.getMessage());
         }
 
-        // Launch Console Menu
-        new Menu().run();
+        // Launch Console Menu (or keep Web Server alive if non-interactive)
+        try {
+            new Menu().run();
+        } catch (Exception e) {
+            System.out.println("\n[VSMS] Web Server active on http://localhost:8080");
+            try {
+                Thread.currentThread().join();
+            } catch (InterruptedException ignored) {
+            }
+        }
     }
 }
