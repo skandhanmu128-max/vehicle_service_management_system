@@ -1,15 +1,20 @@
 @echo off
 rem ============================================================
 rem Compile the Vehicle Service Management System
-rem Requires JDK 8+ (JAVA_HOME is used when set, otherwise javac
-rem must be on the PATH) and the MySQL driver jar in lib\
+rem Auto-detects Javac from JAVA_HOME, IntelliJ JDK, or system PATH
 rem ============================================================
 setlocal
 set "JAVAC=javac"
-if defined JAVA_HOME set "JAVAC=%JAVA_HOME%\bin\javac.exe"
+if defined JAVA_HOME (
+  set "JAVAC=%JAVA_HOME%\bin\javac.exe"
+) else if exist "C:\Program Files\JetBrains\IntelliJ IDEA 2026.2.1\jbr\bin\javac.exe" (
+  set "JAVAC=C:\Program Files\JetBrains\IntelliJ IDEA 2026.2.1\jbr\bin\javac.exe"
+) else (
+  for /d %%D in ("C:\Program Files\Java\jdk*") do if exist "%%D\bin\javac.exe" set "JAVAC=%%D\bin\javac.exe"
+)
 
 if not exist out mkdir out
-%JAVAC% -encoding UTF-8 -cp "lib/*" -d out ^
+"%JAVAC%" -encoding UTF-8 -cp "lib/*" -d out ^
   src\vsms\*.java ^
   src\vsms\db\*.java ^
   src\vsms\dao\*.java ^
