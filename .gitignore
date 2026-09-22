@@ -18,3 +18,7 @@ Thumbs.db
 
 # Maven (if imported later)
 target/
+
+# Embedded H2 DB data and Metals IDE metadata
+data/
+.metals/
